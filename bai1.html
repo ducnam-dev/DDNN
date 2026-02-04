@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Thông Tin Liên Hệ</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body{
+            font-family: Arial;
+            background:#f2f2f2;
+        }
+        .container{
+            width:400px;
+            margin:50px auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+        h2{text-align:center;}
+        .item{margin:10px 0;}
+        .item b{display:inline-block; width:80px;}
+        #qrcode{
+            margin-top:20px;
+            display:flex;
+            justify-content:center;
+        }
+        a{word-break:break-all;}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Thông Tin Liên Hệ</h2>
+
+    <div class="item"><b>Email:</b> Trannaml91920@gmail.com</div>
+    <div class="item"><b>SDT:</b> 0799014365</div>
+    <div class="item">
+        <b>Tài liệu:</b>
+        <a href="https://www.vnetwork.vn/news/bao-cao-ddos-6-thang-dau-nam-2025/" target="_blank">
+            Báo cáo DDoS 6 tháng đầu năm 2025
+        </a>
+    </div>
+
+    <div id="qrcode"></div>
+</div>
+
+<script>
+    const qrData = `
+Thông tin liên hệ:
+Email: Trannaml91920@gmail.com
+SDT: 0799014365
+Tài liệu: https://www.vnetwork.vn/news/bao-cao-ddos-6-thang-dau-nam-2025/
+`;
+
+    new QRCode(document.getElementById("qrcode"), {
+        text: qrData,
+        width: 200,
+        height: 200
+    });
+</script>
+
+</body>
+</html>
